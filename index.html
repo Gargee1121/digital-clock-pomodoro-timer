@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Dashboard Clock & Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="clock-section">
+            <h2 class="section-title">Digital Clock</h2>
+            <div id="digital-clock" class="display">00:00:00 PM</div>
+        </div>
+
+        <div class="pomodoro-section">
+            <h2 class="section-title">Pomodoro Timer</h2>
+            
+            <div class="mode-buttons">
+                <button id="work-mode" class="mode-btn active">Work</button>
+                <button id="break-mode" class="mode-btn">Break</button>
+                <button id="open-settings" class="icon-btn">⚙️</button>
+            </div>
+            
+            <div class="timer-container">
+                <div class="glow-bg" id="ambient-glow"></div>
+                <svg class="progress-ring" width="240" height="240">
+                    <circle class="progress-ring__circle-elapsed" stroke="#221c38" stroke-width="12" fill="transparent" r="100" cx="120" cy="120"/>
+                    <circle id="progress-bar" class="progress-ring__circle" stroke="#ff0055" stroke-width="12" stroke-linecap="round" fill="transparent" r="100" cx="120" cy="120"/>
+                </svg>
+                <div id="pomodoro-timer" class="display">25:00</div>
+            </div>
+
+            <div class="control-buttons">
+                <button id="start-btn" class="control-btn start">Start</button>
+                <button id="pause-btn" class="control-btn pause">Pause</button>
+                <button id="reset-btn" class="control-btn reset">Reset</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <h3>Timer Configuration</h3>
+            <div class="input-group">
+                <label>Work Duration (min)</label>
+                <input type="number" id="work-input" value="25" min="1" max="60">
+            </div>
+            <div class="input-group">
+                <label>Break Duration (min)</label>
+                <input type="number" id="break-input" value="5" min="1" max="60">
+            </div>
+            <button id="close-settings" class="save-btn">Apply Settings</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
